@@ -9,6 +9,9 @@ vim.api.nvim_create_autocmd('FileType', {
   end,
 })
 
+-- prevent pasting from corrupting clipboard
+vim.keymap.set('x', 'p', 'pgvy')
+
 -- Set <space> as the leader key
 -- See `:help mapleader`
 --  NOTE: Must happen before plugins are loaded (otherwise wrong leader will be used)
@@ -18,7 +21,7 @@ vim.g.maplocalleader = ' '
 --------
 --chuboe
 --------
-vim.keymap.set('n', '<leader>z', ':set spell!<CR>', { desc = 'Turn on Spelling' })
+vim.keymap.set('n', '<leader>zf', ':set spell!<CR>', { desc = 'Find Spelling Issues' })
 vim.keymap.set('n', '<leader>zn', function()
   vim.cmd 'normal! ]s'
 end, { desc = 'Next word' })
@@ -28,7 +31,7 @@ end, { desc = 'Previous word' })
 vim.keymap.set('n', '<leader>za', function()
   vim.cmd 'normal! zg'
 end, { desc = 'Add word' })
-vim.keymap.set('n', '<leader>zf', function()
+vim.keymap.set('n', '<leader>z', function()
   vim.cmd 'normal! 1z='
 end, { desc = 'Choose word' })
 vim.keymap.set('n', '<leader>z?', function()
