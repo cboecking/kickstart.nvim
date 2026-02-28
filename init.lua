@@ -808,6 +808,10 @@ require('lazy').setup({
       },
 
       sources = {
+        --------
+        --chuboe
+        --------
+        -- added 'emoji' source for github-style emoji completion
         default = { 'lsp', 'path', 'snippets', 'lazydev', 'emoji' },
         providers = {
           lazydev = { module = 'lazydev.integrations.blink', score_offset = 100 },
@@ -944,6 +948,10 @@ require('lazy').setup({
   --    This is the easiest way to modularize your config.
   --
   --  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
+  --------
+  --chuboe
+  --------
+  -- uncommented to enable custom plugins from lua/custom/plugins/
   { import = 'custom.plugins' },
   --
   -- For additional information with loading, sourcing and examples see `:help lazy.nvim-🔌-plugin-spec`
