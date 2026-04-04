@@ -18,7 +18,13 @@ return {
     cmd = { 'KittyScrollbackGenerateKittens', 'KittyScrollbackCheckHealth' },
     event = { 'User KittyScrollbackLaunch' },
     config = function()
-      require('kitty-scrollback').setup()
+      require('kitty-scrollback').setup({
+        callbacks = {
+          after_ready = function(kitty_data, opts)
+            vim.api.nvim_set_option_value('buftype', 'nofile', { buf = 0 })
+          end,
+        },
+      })
     end,
   },
 }
