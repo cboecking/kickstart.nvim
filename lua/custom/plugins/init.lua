@@ -19,6 +19,9 @@ return {
     event = { 'User KittyScrollbackLaunch' },
     config = function()
       require('kitty-scrollback').setup({
+        paste_window = {
+          yank_register_enabled = false,
+        },
         callbacks = {
           after_ready = function(kitty_data, opts)
             vim.api.nvim_set_option_value('buftype', 'nofile', { buf = 0 })
